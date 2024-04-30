@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import Title from './components/Title';
+import Summaryexpensess from './components/Summaryexpenses';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <>
       <div className="container mb-5">
         <Title></Title>
+        <Summaryexpensess></Summaryexpensess>
       </div>
     </>
   )
