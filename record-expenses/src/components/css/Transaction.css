@@ -1,0 +1,13 @@
+.income {
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.5);
+    height: 50px;
+    border-radius: 5px;
+    border-right: green 7px solid;
+}
+
+.expense {
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.5);
+    height: 50px;
+    border-radius: 5px;
+    border-right: red 7px solid;
+}

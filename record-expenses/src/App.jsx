@@ -7,7 +7,7 @@ import Title from './components/Title';
 import Summaryexpensess from './components/Summaryexpenses';
 import LinkTo from './components/LinkTo';
 import Forminsert from './components/Forminsert';
-
+import Transaction from './components/Transaction';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -18,6 +18,7 @@ function App() {
         <LinkTo></LinkTo>
         <Summaryexpensess></Summaryexpensess>
         <Forminsert></Forminsert>
+        <Transaction></Transaction>
       </div>
     </>
   )
