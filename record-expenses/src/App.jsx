@@ -5,7 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import Title from './components/Title';
 import Summaryexpensess from './components/Summaryexpenses';
-
+import LinkTo from './components/LinkTo';
+import Forminsert from './components/Forminsert';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,8 +15,9 @@ function App() {
     <>
       <div className="container mb-5">
         <Title></Title>
-        
+        <LinkTo></LinkTo>
         <Summaryexpensess></Summaryexpensess>
+        <Forminsert></Forminsert>
       </div>
     </>
   )
