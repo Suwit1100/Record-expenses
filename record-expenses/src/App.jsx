@@ -11,8 +11,15 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { NavLink } from 'react-router-dom';
 function App() {
 
+  const Initdata = []
+  const [items, SetItems] = useState(Initdata)
+  // เพิ่มข้อมูล
   const AddItem = (newItem) => {
     console.log(newItem);
+    SetItems((preitems => {
+      return [newItem, ...preitems]
+    }));
+
   }
   return (
     <>
@@ -39,7 +46,7 @@ function App() {
             <Route path='/insert' element={
               <>
                 <Forminsert ItemSubmit={AddItem}></Forminsert>
-                <Transaction></Transaction>
+                <Transaction Items={items}></Transaction>
               </>
             }>
             </Route>

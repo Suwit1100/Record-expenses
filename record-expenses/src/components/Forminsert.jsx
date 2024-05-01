@@ -33,8 +33,8 @@ function Forminsert(props) {
     return (
         <>
             <form onSubmit={submit}>
-                <input type="text" placeholder='ชื่อรายการ' className='form-control my-2' onChange={eventitle} />
-                <input type="text" placeholder='จำนวนเงิน' className='form-control my-2' onChange={evenamount} />
+                <input type="text" placeholder='ชื่อรายการ' className='form-control my-2' onChange={eventitle} value={title} />
+                <input type="text" placeholder='จำนวนเงิน' className='form-control my-2' onChange={evenamount} value={amount} />
                 <input type="submit" className='form-control btn btn-success' value={"บันทึกรายการ"} />
             </form>
         </>
