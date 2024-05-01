@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
 
 
-function Forminsert() {
+function Forminsert(props) {
     const [title, SetTitle] = useState("")
     const [amount, SetAmount] = useState(0)
 
@@ -18,7 +19,13 @@ function Forminsert() {
     const submit = (e) => {
         e.preventDefault();
         const Itemdata = {
+            id: uuidv4(),
+            title: title,
+            amount: amount
         }
+        props.ItemSubmit(Itemdata);
+        SetTitle("");
+        SetAmount(0);
     }
 
 

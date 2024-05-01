@@ -10,6 +10,10 @@ import Transaction from './components/Transaction';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { NavLink } from 'react-router-dom';
 function App() {
+
+  const AddItem = (newItem) => {
+    console.log(newItem);
+  }
   return (
     <>
       <div className="container mb-5">
@@ -34,7 +38,7 @@ function App() {
             </Route>
             <Route path='/insert' element={
               <>
-                <Forminsert></Forminsert>
+                <Forminsert ItemSubmit={AddItem}></Forminsert>
                 <Transaction></Transaction>
               </>
             }>
