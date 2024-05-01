@@ -3,8 +3,6 @@ import "./css/Transaction.css"
 
 function Transaction(props) {
     const { Items } = props;
-    const status = Items.amount > 0 ? "income" : "expense";
-    const symbo = Items.amount > 0 ? "+" : "-";
     return (
         <div className='container'>
             {Items.map((e) => {
