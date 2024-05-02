@@ -10,7 +10,7 @@ function Summaryexpenses() {
                 <div className="col-12 mb-3">
                     <div className="box-expense form-control text-center d-flex align-items-center justify-content-center">
                         <h4>
-                            ยอดคงเหลือ : {sumIncome + sumExpense}
+                            ยอดคงเหลือ : {sumIncome - sumExpense}
                         </h4>
                     </div>
                 </div>

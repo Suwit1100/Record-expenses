@@ -34,7 +34,7 @@ function App() {
     const expense = amount.filter((e) => e < 0).reduce((total, e) => (total += e), 0)
     console.log(items, income);
     setsumIncome(income);
-    setsumExpense(expense);
+    setsumExpense(Math.abs(expense));
   }, [items, sumIncome, sumExpense]);
 
   return (
