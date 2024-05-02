@@ -18,7 +18,7 @@ function Transaction(props) {
                         </div>
                     </div>
                 );
-            })};
+            })}
         </div >
     )
 }

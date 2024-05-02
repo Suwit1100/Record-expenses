@@ -13,14 +13,26 @@ function App() {
 
   const Initdata = []
   const [items, SetItems] = useState(Initdata)
+  const [sumIncome, setsumIncome] = useState(0);
+  const [sumExpense, setsumExpense] = useState(0);
   // เพิ่มข้อมูล
   const AddItem = (newItem) => {
     console.log(newItem);
     SetItems((preitems => {
       return [newItem, ...preitems]
     }));
-
   }
+
+  // รวมค่า income expense
+  useEffect(() => {
+    console.log("Effact App");
+    const amount = items.map(() => items.amount);
+    const income = amount.filter((e) => e > 0).reduce((total, e) => (total + e), 0)
+    const expense = amount.filter((e) => e < 0).reduce((total, e) => (total + e), 0)
+    setsumIncome(income)
+    setsumExpense(expense)
+  }, [items, sumIncome, sumExpense]);
+  
   return (
     <>
       <div className="container mb-5">
