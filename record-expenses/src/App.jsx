@@ -9,6 +9,9 @@ import Forminsert from './components/Forminsert';
 import Transaction from './components/Transaction';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { NavLink } from 'react-router-dom';
+import DataContext from './data/DataContext';
+
+
 function App() {
 
   const Initdata = []
@@ -26,15 +29,16 @@ function App() {
   // รวมค่า income expense
   useEffect(() => {
     console.log("Effact App");
-    const amount = items.map(() => items.amount);
-    const income = amount.filter((e) => e > 0).reduce((total, e) => (total + e), 0)
-    const expense = amount.filter((e) => e < 0).reduce((total, e) => (total + e), 0)
-    setsumIncome(income)
-    setsumExpense(expense)
+    const amount = items.map((items) => items.amount);
+    const income = amount.filter((e) => e > 0).reduce((total, e) => (total += e), 0)
+    const expense = amount.filter((e) => e < 0).reduce((total, e) => (total += e), 0)
+    console.log(items, income);
+    setsumIncome(income);
+    setsumExpense(expense);
   }, [items, sumIncome, sumExpense]);
-  
+
   return (
-    <>
+    <DataContext.Provider value={{ sumIncome: sumIncome, sumExpense: sumExpense }}>
       <div className="container mb-5">
         <Title></Title>
         <Router>
@@ -65,7 +69,7 @@ function App() {
           </Routes>
         </Router>
       </div>
-    </>
+    </DataContext.Provider >
   )
 }
 

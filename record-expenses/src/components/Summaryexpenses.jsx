@@ -1,7 +1,9 @@
 import React from 'react'
 import "./css/Summaryexpemses.css"
-
+import DataContext from "../data/DataContext";
+import { useContext } from 'react';
 function Summaryexpenses() {
+    const { sumIncome, sumExpense } = useContext(DataContext);
     return (
         <>
             <div className="row mt-3">
@@ -19,7 +21,7 @@ function Summaryexpenses() {
                                 รายรับ
                             </div>
                             <div className="col-12">
-                                50000
+                                {sumIncome}
                             </div>
                         </div>
                     </div>
@@ -31,7 +33,7 @@ function Summaryexpenses() {
                                 รายจ่าย
                             </div>
                             <div className="col-12 ">
-                                4000
+                                {sumExpense}
                             </div>
                         </div>
                     </div>

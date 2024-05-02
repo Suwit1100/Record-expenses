@@ -21,8 +21,8 @@ function Forminsert(props) {
         e.preventDefault();
         const Itemdata = {
             id: uuidv4(),
-            title: title,
-            amount: amount
+            title: String(title),
+            amount: Number(amount)
         };
         props.ItemSubmit(Itemdata);
         SetTitle("");
