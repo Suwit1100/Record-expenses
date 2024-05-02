@@ -14,7 +14,7 @@ function Transaction(props) {
                             {e.title}
                         </div>
                         <div className="col-6 text-end">
-                            {symbo}{e.amount}
+                            {symbo}{Math.abs(e.amount)}
                         </div>
                     </div>
                 );
