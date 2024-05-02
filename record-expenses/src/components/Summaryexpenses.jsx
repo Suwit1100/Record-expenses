@@ -4,13 +4,17 @@ import DataContext from "../data/DataContext";
 import { useContext } from 'react';
 function Summaryexpenses() {
     const { sumIncome, sumExpense } = useContext(DataContext);
+    const formatNumber = (num) => {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+    };
+
     return (
         <>
             <div className="row mt-3">
                 <div className="col-12 mb-3">
                     <div className="box-expense form-control text-center d-flex align-items-center justify-content-center">
                         <h4>
-                            ยอดคงเหลือ : {sumIncome - sumExpense}
+                            ยอดคงเหลือ : {formatNumber(sumIncome - sumExpense)}
                         </h4>
                     </div>
                 </div>
@@ -21,7 +25,7 @@ function Summaryexpenses() {
                                 รายรับ
                             </div>
                             <div className="col-12">
-                                {sumIncome}
+                                {formatNumber(sumIncome)}
                             </div>
                         </div>
                     </div>
@@ -33,7 +37,7 @@ function Summaryexpenses() {
                                 รายจ่าย
                             </div>
                             <div className="col-12 ">
-                                {sumExpense}
+                                {formatNumber(sumExpense)}
                             </div>
                         </div>
                     </div>

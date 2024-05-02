@@ -3,6 +3,10 @@ import "./css/Transaction.css"
 
 function Transaction(props) {
     const { Items } = props;
+    const formatNumber = (num) => {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+    };
+
     return (
         <div className='container'>
             {Items.map((e) => {
@@ -14,7 +18,7 @@ function Transaction(props) {
                             {e.title}
                         </div>
                         <div className="col-6 text-end">
-                            {symbo}{Math.abs(e.amount)}
+                            {symbo}{formatNumber(Math.abs(e.amount))}
                         </div>
                     </div>
                 );
